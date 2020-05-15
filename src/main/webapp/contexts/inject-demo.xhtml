@@ -1,0 +1,62 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="css">
+		main section table table {
+			border: 1px solid var(--color-border-light);
+			background-color: var(--color-bg-light);
+			padding: 1rem;
+		}
+		main section table table th, main section table table td {
+			border: 1px solid var(--color-border-light);
+			background-color: white;
+			padding: 0.5rem;
+		}
+	</ui:define>
+	
+	<ui:define name="main">
+		<section>
+			<h:panelGrid>
+				<f:facet name="header">Programmatische Injects</f:facet>
+				<h:panelGrid columns="2">
+					<h:panelGroup>
+						@Inject <br />
+						RequestBean requestBean1;
+					</h:panelGroup>
+					<h:panelGroup>
+						RequestBean requestBean2 <br /> 
+						&#x00A0;&#x00A0; = CDI.current().select(RequestBean.class).get();
+					</h:panelGroup>
+					<h:panelGroup>
+						#{injectDemo.requestBean1}					
+					</h:panelGroup>
+					<h:panelGroup>
+						#{injectDemo.requestBean2}					
+					</h:panelGroup>
+				</h:panelGrid>
+			
+				<h:panelGrid columns="2">
+					<h:panelGroup>
+						@Inject <br />
+						SessionBean sessionBean1;				
+					</h:panelGroup>
+					<h:panelGroup>
+						SessionBean sessionBean2  <br /> 
+						&#x00A0;&#x00A0; = CDI.current().select(SessionBean.class).get();
+					</h:panelGroup>	
+					<h:panelGroup>
+						#{injectDemo.sessionBean1}
+					</h:panelGroup>
+					<h:panelGroup>
+						#{injectDemo.sessionBean2}
+					</h:panelGroup>
+				</h:panelGrid>
+			</h:panelGrid>
+		</section>
+	</ui:define>
+
+</ui:composition>

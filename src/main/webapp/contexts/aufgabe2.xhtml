@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/layout/template-buk.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<h:outputText value="Angemeldeter Benutzer: #{aufgabe2View.loggedIn.user}" rendered="#{not empty aufgabe2View.loggedIn.user}" /> 
+			<h:panelGroup rendered="#{empty aufgabe2View.loggedIn.user}">
+				Benutzername: <h:inputText value="#{aufgabe2View.user}" />
+			</h:panelGroup>
+			<br />
+			<h:commandButton value="Anmelden" action="#{aufgabe2View.logOn}" rendered="#{empty aufgabe2View.loggedIn.user}" /> 
+			<h:commandButton value="Abmelden" action="#{aufgabe2View.logOff}" rendered="#{not empty aufgabe2View.loggedIn.user}" /> 
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,23 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="main">
+		<h:form>
+			<section>
+				<h:panelGrid columns="2">
+					<f:facet name="header">Events und Transaktionen</f:facet>
+					Vorname: <h:inputText value="#{ccTransactional.customer.firstName}" />
+					Nachname: <h:inputText value="#{ccTransactional.customer.lastName}" />
+				</h:panelGrid>
+				<h:commandButton action="#{ccTransactional.persistThenFireEvent}" value="persistThenFireEvent" />&#xA0;&#xA0;
+				<h:commandButton action="#{ccTransactional.fireEventThenPersist}" value="fireEventThenPersist" />&#xA0;&#xA0;
+				<h:commandButton action="#{ccTransactional.persistThenFireEventThenException}" value="persistThenFireEventThenException" />
+  			</section>
+ 		</h:form>
+	</ui:define>
+
+</ui:composition>

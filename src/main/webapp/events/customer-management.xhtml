@@ -1,0 +1,26 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="main">
+		<h:form>
+			<section>
+				<h:panelGrid>
+					<f:facet name="header">Kundenneuanlage</f:facet>
+					<h:panelGrid >
+						Kundennummer:
+						<h:inputText value="#{customerController.customer.number}" />	
+						<h:commandButton action="#{customerController.save}" value="Kunde anlegen" />
+						<h:commandButton action="#{customerController.saveCreated}" value="Kunde anlegen (@Created)" />
+						<h:commandButton action="#{customerController.remind}" value="Kunde mahnen (@Reminded)" />
+						<h:commandButton action="#{customerController.remindSecond}" value="Kunde mahnen (@Reminded(&quot;second&quot;))" />
+					</h:panelGrid>
+				</h:panelGrid>
+  			</section>
+ 		</h:form>
+	</ui:define>
+
+</ui:composition>

@@ -1,0 +1,22 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="css">
+
+	</ui:define>
+	
+	<ui:define name="main">
+		<section>
+			<h:panelGrid>
+				<f:facet name="header">Das Interface InjectionPoint</f:facet>
+				Bitte beobachten Sie das Log!
+				#{injectionPoints}
+			</h:panelGrid>
+		</section>
+	</ui:define>
+
+</ui:composition>

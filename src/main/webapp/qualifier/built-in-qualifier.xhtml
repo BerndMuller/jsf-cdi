@@ -1,0 +1,48 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="main">
+		<h:form>
+			<section>
+				<h:panelGrid columns="2">
+					<f:facet name="header">Built-In-Qualifier</f:facet>
+					
+					<h:panelGroup>
+						public class BeanWithoutQualifier { <br />
+						}
+					</h:panelGroup>
+					<h:inputTextarea value="#{biqc.getQualifierForClass('de.jsfpraxis.cdi.qualifier.BeanWithoutQualifier')}" rows="3" cols="50"/>
+
+					<h:panelGroup>
+						@Default <br />
+						public class BeanWithDefault { <br />
+						}
+					</h:panelGroup>
+					<h:inputTextarea value="#{biqc.getQualifierForClass('de.jsfpraxis.cdi.qualifier.BeanWithDefault')}" rows="3" cols="50"/>
+
+					<h:panelGroup>
+						@Any <br />
+						public class BeanWithAny { <br />
+						}
+					</h:panelGroup>
+					<h:inputTextarea value="#{biqc.getQualifierForClass('de.jsfpraxis.cdi.qualifier.BeanWithAny')}" rows="3" cols="50"/>
+
+					<h:panelGroup>
+						@Named <br />
+						public class BeanWithNamed { <br />
+						}
+					</h:panelGroup>
+					<h:inputTextarea value="#{biqc.getQualifierForClass('de.jsfpraxis.cdi.qualifier.BeanWithNamed')}" rows="4" cols="50"/>
+
+				</h:panelGrid>
+				#{biqc.logQualifiersForFactorial()}
+				#{biqc.logQualifiersForBeanWithIterative()}
+  			</section>
+ 		</h:form>
+	</ui:define>
+
+</ui:composition>

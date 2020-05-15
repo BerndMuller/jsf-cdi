@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.jsfpraxis</groupId>
+	<artifactId>jsf-cdi</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	<name>Kapitel 3: Contexts and Dependency Injection</name>
+	<description>Beispiele für Kapitel 3</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven-war-plugin.version>3.2.0</maven-war-plugin.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>8.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<finalName>jsf-cdi</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<release>13</release>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${maven-war-plugin.version}</version>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<configuration>
+					<argLine>
+						--illegal-access=permit
+					</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven-failsafe-plugin.version}</version>
+				<configuration>
+					<argLine>
+						--illegal-access=permit
+					</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<header>JavaServer Faces - Kapitel 3 - Contexts and Dependency Injection</header>
+					<doctitle>Contexts and Dependency Injection</doctitle>
+					<footer>Copyright &#169; 2020 Bernd Müller.</footer>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

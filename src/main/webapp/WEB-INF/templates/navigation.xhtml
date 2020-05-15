@@ -1,0 +1,47 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:jsf="http://xmlns.jcp.org/jsf"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<nav class="nav">
+		<ul>
+			<li><a href="#{request.contextPath}/home.xhtml">Home</a></li>
+			<li class="dropdown">
+  	  			<a href="#" class="dropbtn">Scopes und Kontexte</a>
+  	  			<div class="dropdown-content">
+  					<a href="#{externalContext.applicationContextPath}/contexts/scopes-and-contexts.xhtml">Scopes und Kontexte</a>
+  					<a href="#{externalContext.applicationContextPath}/contexts/inject-demo.xhtml">Programmatische Injects</a>
+  					<a href="#{externalContext.applicationContextPath}/contexts/injection-points.xhtml">Klasse <code>InjectionPoint</code></a>
+  	  			</div>
+  			</li>
+			<li class="dropdown">
+  	  			<a href="#" class="dropbtn">Qualifier und Alternativen</a>
+  	  			<div class="dropdown-content">
+					<a href="#{externalContext.applicationContextPath}/qualifier/factorials.xhtml">Fakultätsberechnung (Qualifier)</a>
+					<a href="#{externalContext.applicationContextPath}/qualifier/built-in-qualifier.xhtml">Built-In-Qualifier</a>
+					<a href="#{externalContext.applicationContextPath}/alternative/factorials.xhtml">Fakultätsberechnung (Alternative)</a>
+  	  			</div>
+  			</li>
+			<li class="dropdown">
+  	  			<a href="#" class="dropbtn">Producer-Methoden</a>
+  	  			<div class="dropdown-content">
+					<a href="#{externalContext.applicationContextPath}/producer/random.xhtml">Producer-Methoden (Random)</a>
+					<a href="#{externalContext.applicationContextPath}/producer/scopes.xhtml">Producer-Methoden mit Scope</a>
+					<a href="#{externalContext.applicationContextPath}/producer/fourty-two.xhtml">Producer-Field (42)</a>
+					<a href="#{externalContext.applicationContextPath}/producer/jdbc-connection.xhtml">Producer und Disposer (Connection)</a>
+  	  			</div>
+  			</li>
+			<li class="dropdown">
+  	  			<a href="#" class="dropbtn">Events</a>
+  	  			<div class="dropdown-content">
+					<a href="#{externalContext.applicationContextPath}/events/customer-management.xhtml">Kundenneuanlage</a>
+					<a href="#{externalContext.applicationContextPath}/events/private-customer-management.xhtml">Privatkundenneuanlage</a>
+					<a href="#{externalContext.applicationContextPath}/events/transactions/customer.xhtml">Events und Transaktionen</a>
+  	  			</div>
+  			</li>
+		</ul>
+    </nav>
+
+</ui:composition>

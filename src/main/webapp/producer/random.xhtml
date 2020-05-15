@@ -1,0 +1,23 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="main">
+		<h:form>
+			<section>
+				<h:panelGrid>
+					<f:facet name="header">Producer (Random)</f:facet>
+					<h:panelGrid >
+						Zufallszahl (über Controller): #{randomController.random}
+						<br/>
+						<span>Zufallszahl (über EL-Name): #{nextRandom}</span>
+					</h:panelGrid>
+				</h:panelGrid>
+  			</section>
+ 		</h:form>
+	</ui:define>
+
+</ui:composition>

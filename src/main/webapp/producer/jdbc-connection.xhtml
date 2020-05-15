@@ -1,0 +1,24 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="main">
+		<h:form>
+			<section>
+				<h:panelGrid>
+					<f:facet name="header">Producer and Disposer (Connection)</f:facet>
+					<h:panelGrid >
+						Select-Statement like 'select 1 + 1' or 'select 4 * 5'
+						<h:inputText value="#{connectionController.selectStatement}"/>
+						<h:commandButton action="#{connectionController.run}" value="Execute SELECT in DB" />
+						Result: #{connectionController.resultSetFirstRowFirstColumnAsLong}
+					</h:panelGrid>
+				</h:panelGrid>
+  			</section>
+ 		</h:form>
+	</ui:define>
+
+</ui:composition>

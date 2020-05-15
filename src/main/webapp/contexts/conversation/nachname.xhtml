@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/layout/template-buk.xhtml">
+	<ui:define name="title">
+		Beans und Kontexte (Konversationen)
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+   			<p>Kundenneuanlage Nachname</p>
+	   		<f:event listener="#{kundeView.checkConversation}" type="preRenderView" />
+   			<h:panelGrid columns="2" headerClass="header">
+	   			<f:facet name="header">Bitte Nachname eingeben</f:facet>
+				<h:outputLabel value="Nachname:" for="vorname" />
+   				<h:panelGroup>
+   					<h:inputText id="vorname" value="#{kundeView.nachname}" required="true" requiredMessage="Bitte eingeben" />
+   					<h:message for="vorname" styleClass="message" />
+   				</h:panelGroup>
+   			</h:panelGrid>
+   			<h:commandButton action="#{kundeView.vorname}" value="Zurück" immediate="true"/>
+	   		<h:commandButton action="#{kundeView.geburtstag}" value="Weiter" />
+   			<h:commandButton action="#{kundeView.abbrechen}" value="Abbrechen" immediate="true"/>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
+
+
