@@ -25,4 +25,11 @@
 		<param-value>true</param-value>
 	</context-param>
 
+	<!-- Einheit ist Minute -->
+	<!-- 
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
+	 -->
+
 </web-app>

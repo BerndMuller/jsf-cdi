@@ -25,7 +25,7 @@ public class QualifierController {
 	 * 
 	 * @param className qualified class name
 	 * @return newline separated list of all qualifiers
-	 * @throws ClassNotFoundException
+	 * @throws ClassNotFoundException if class not found
 	 */
 	public String getQualifierForClass(String className) throws ClassNotFoundException {
 		Class<?> clazz = Class.forName(className);

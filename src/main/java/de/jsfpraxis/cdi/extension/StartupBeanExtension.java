@@ -16,6 +16,11 @@ import javax.enterprise.inject.spi.ProcessBean;
  * Extension for eagerly instantiating @ApplicationScoped beans
  * annotated @Startup, i.e. mimics same EJB annotation semantics.
  * 
+ * <p>
+ * It is of course possible to define an own @Startup annotation, if desired.
+ * 
+ * 
+ * <p>
  * Copied from https://gist.github.com/mojavelinux/635719
  * 
  * @author Bernd Müller

@@ -8,14 +8,14 @@ import javax.enterprise.context.SessionScoped;
 import javax.enterprise.event.Observes;
 import javax.servlet.http.HttpSession;
 
-public class SessionCreatedListener {
+public class SessionScopeObserver {
 	
 	public void sessionCreated(@Observes @Initialized(SessionScoped.class) HttpSession session) {
-		Logger.getLogger(SessionCreatedListener.class.getCanonicalName()).info("Session created: " + session.getId());
+		Logger.getLogger(SessionScopeObserver.class.getCanonicalName()).info("Session created: " + session.getId());
 	}
 
 	public void sessionRemoved(@Observes @Destroyed(SessionScoped.class) HttpSession session) {
-		Logger.getLogger(SessionCreatedListener.class.getCanonicalName()).info("Session removed: " + session.getId());
+		Logger.getLogger(SessionScopeObserver.class.getCanonicalName()).info("Session removed: " + session.getId());
 	}
 
 }

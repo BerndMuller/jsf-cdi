@@ -1,0 +1,25 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="css">
+
+	</ui:define>
+	
+	<ui:define name="main">
+		<h:form>
+			<section>
+				<h:panelGrid>
+					<f:facet name="header">Wizard (Conversation-Scope)</f:facet>
+					<h:commandButton action="#{wizardController.startWizard}" value="Geschäftsprozess XYZ starten" />
+					<br />
+					Bitte beobachten Sie das Log.				
+				</h:panelGrid>
+			</section>
+		</h:form>
+	</ui:define>
+
+</ui:composition>

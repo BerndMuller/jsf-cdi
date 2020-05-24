@@ -1,0 +1,29 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="css">
+
+	</ui:define>
+	
+	<ui:define name="main">
+		<h:form>
+			<f:event listener="#{wizardController.checkConversation}" type="preRenderView" />
+			<section>
+				<h:panelGrid>
+					<f:facet name="header">Data Set 3 (Conversation-Scope)</f:facet>
+					Data Set (3/3): <h:inputText value="#{wizardController.data3}" />
+					<h:panelGroup>
+						<h:commandButton action="#{wizardController.backToDataSet2}" value="Zurück" />
+						<h:commandButton action="#{wizardController.completeWizard}" value="Geschäftsprozess XYZ beenden" />
+						<h:commandButton action="#{wizardController.abort}" value="Abbrechen" />
+					</h:panelGroup>
+				</h:panelGrid>
+		</section>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
