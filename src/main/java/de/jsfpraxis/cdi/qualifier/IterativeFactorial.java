@@ -2,6 +2,12 @@ package de.jsfpraxis.cdi.qualifier;
 
 import java.math.BigInteger;
 
+/**
+ * Iterative Implementierung der Fakultätsfunktion.
+ * 
+ * @author Bernd Müller
+ *
+ */
 @Iterative
 public class IterativeFactorial implements Factorial {
 
