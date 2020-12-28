@@ -19,6 +19,8 @@ import javax.enterprise.inject.spi.ProcessBean;
  * <p>
  * It is of course possible to define an own @Startup annotation, if desired.
  * 
+ * <p>
+ * To understand this example completely have a look into the service loader file <code>javax.enterprise.inject.spi.Extension</code>
  * 
  * <p>
  * Copied from https://gist.github.com/mojavelinux/635719
